@@ -1,0 +1,14 @@
+defaults: &defaults
+  host: localhost
+  port: 27017
+
+development:
+  <<: *defaults
+  database: locomotive_dev
+
+test:
+  <<: *defaults
+  database: locomotive_test
+
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>
